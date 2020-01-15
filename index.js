@@ -8,8 +8,8 @@ const app= express();
 //mongoose.connect('mongodb://locahost/ninjaApp');
 //mongoose.Promise = global.Promise; //needed because mongodb Promise is deprecated
 //run service mongodb start or service mongodb stop or service mongodb restart or service mongodb status
-//remotely //OR run mongo "mongodb+srv://todoappcluster-qsbgu.mongodb.net/test"  --username tempUsername
-mongoose.connect("mongodb+srv://temp:temp@cluster0-j1vkj.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true,  useCreateIndex: true },function(err) {
+//remotely //OR run mongo URI  --username tempUsername
+mongoose.connect(mongoDbURI,{ useNewUrlParser: true, useUnifiedTopology: true,  useCreateIndex: true },function(err) {
 	if(err) throw err;
 	console.log('connected');
 })
